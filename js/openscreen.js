@@ -1,15 +1,17 @@
 define([
+  'router',
   'config',
   'controller/ui',
   'model/sync',
   'model/tournament'
-], function(Config, UI, Sync, Tournament){
+], function(Router, Config, UI, Sync, Tournament){
   
-  var app_router;
+  //var app_router;
   var tournaments = [];
   var loadCount = 0;
   
   var initialize = function(){
+    Router.initialize();
     Sync.initialize();
     
     UI.showLoading(true);
@@ -17,12 +19,11 @@ define([
       var t = new Tournament(Config.tournaments[i]);
       t.on('change', onTournamentLoadEvent);
       t.fetch();
+      //console.log(" fetch: "+t);
       tournaments.push(t);
+      //console.log(i+" tournament: "+tournaments[i].id);
     }
 
-
-    app_router = new AppRouter();
-    Backbone.history.start();
   };
   
   
@@ -35,22 +36,16 @@ define([
   
   var start = function() {
     UI.showLoading(false);
-    console.log("hooray");
+    console.log("openscreen.start");
     
-    console.log(tournaments[0].get("name"));
-  };
-  
-  
+    //console.log(tournaments[0].get("name"));
+    for(var i = 0, c = tournaments.length; i < c; i++) {
+      console.log(i + " tournament: "+ tournaments[i].get("id") +" get(name): " + tournaments[i].get("name"));
+      //console.log(i + " tournament scheduling_format: " + tournaments[i].get("scheduling_format"));
 
-  var AppRouter = Backbone.Router.extend({
-    routes: {
-      '*actions': 'defaultAction'
-    },
-
-    defaultAction: function(actions){
-      
     }
-  });
+  };
+
 
 
   return {
