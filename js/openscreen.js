@@ -8,43 +8,66 @@ define([
   
   //var app_router;
   var tournaments = [];
+  var womenTournament = [];
+  var mixedTournament = [];
+  var openTournament = [];
   var loadCount = 0;
   
   var initialize = function(){
-    Router.initialize();
-    Sync.initialize();
-    
-    UI.showLoading(true);
-    for(var i = 0, c = Config.tournaments.length; i < c; i++) {
-      var t = new Tournament(Config.tournaments[i]);
+    Sync.initialize(); 
+  
+    /*for(var i = 0, c = Config.tournaments.length; i < c; i++) {
+      var t = new Tournament(Config.tournaments[0]);
       t.on('change', onTournamentLoadEvent);
       t.fetch();
-      //console.log(" fetch: "+t);
       tournaments.push(t);
-      //console.log(i+" tournament: "+tournaments[i].id);
-    }
+    } //end for */
 
+    //create womenTournament object for json data in rounds
+    womenTournament = new Tournament(Config.tournaments[0]);
+    womenTournament.on('change', onTournamentLoadEvent);
+    mixedTournament = new Tournament(Config.tournaments[1]);
+    mixedTournament.on('change', onTournamentLoadEvent);
+    openTournament = new Tournament(Config.tournaments[2]);
+    openTournament.on('change', onTournamentLoadEvent);
+
+    //set Router aan om # op te vangen
+    Router.initialize(this);
+    //Router.on('change',onRouterChangeEvent);
   };
-  
+
+  var fetchRound = function(division,round){
+    //fetch
+    //Hoe kun je iets mee sturen met fetch?
+    //zodat je uit de router een round nr en/of team-name kan meesturen
+    //UI.showLoading(true);
+    //womenTournament.fetch();
+    console.log("OPENSCREEN.fetchRound: " + division + " round: " + round);
+
+  }
+  var fetchTeam = function(division,team){
+
+
+  }
+
   
   var onTournamentLoadEvent = function(e) {
-    loadCount++;
-    if(loadCount >= tournaments.length) {
+    console.log("onTournamentLoadEvent: " + JSON.stringify(e, null, 1));
+    //loadCount++;
+    //if(loadCount >= tournaments.length) {
       start();
-    }
+    //} //end if
   };
   
   var start = function() {
+    console.log("OPENSCREEN.START");
     UI.showLoading(false);
-    console.log("openscreen.start");
     
-    //console.log(tournaments[0].get("name"));
-    for(var i = 0, c = tournaments.length; i < c; i++) {
-      console.log(i + " tournament: "+ tournaments[i].get("id") +" get(name): " + tournaments[i].get("name"));
-      //console.log(i + " tournament scheduling_format: " + tournaments[i].get("scheduling_format"));
+    //womenTournament.set("round",womenTournament.get("objects"));
+    console.log("GET ROUND 3: " + JSON.stringify(womenTournament.get("round"), null, 1));
 
-    }
   };
+
 
 
 

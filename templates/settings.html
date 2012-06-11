@@ -1,0 +1,24 @@
+
+<h1>Settings</h1>
+
+	<ol>
+		<li>Carousel voor public screen</li>
+	    <li>Font size > manipuleer em size</li>
+	</ol>
+
+<div id="message"></div>
+
+
+<script>
+	//alert("settings: ");
+
+	$(window).resize(function() {
+		message = "viewport";
+		message += " height:" + $(window).height() + "px"; // returns height of browser viewport
+		message += " width:" + $(window).width() + "px";
+		$('#message').html(message);
+	});
+	$(window).resize();
+
+</script>
+
