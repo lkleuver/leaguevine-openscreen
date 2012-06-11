@@ -1,0 +1,8 @@
+<h2>Games</h2>
+<ul>
+  <% _.each(games, function(game){ %>
+   <li>
+    <%= game.game_site.name %>: <%= game.team_1.name %> <%= game.team_1_score %>  vs <%= game.team_2.name %> <%= game.team_2_score %>
+   </li> 
+  <% }); %>
+</ul>

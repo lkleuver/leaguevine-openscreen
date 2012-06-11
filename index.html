@@ -11,48 +11,14 @@
   <script data-main="js/main" src="js/vendor/require.js"></script>
 </head>
 <body>
-
-  <nav>
-    <h1>Nav</h1>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#division/women">Women division</a></li>
-      <li><a href="#division/mixed">Mixed division</a></li>
-      <li><a href="#division/open">Open division</a></li>
-      <li><a href="#settings">Settings</a></li>
-    </ul>
-  </nav>
-  
-  <nav class="subnav">
-    <h1>Women division</h1>
-    <ul>
-      <li><a href="#division/women/teams">Teams</a></li>
-      <li><a href="#division/women/round/1">Round 1</a></li>
-      <li><a href="#division/women/round/2">Round 2</a></li>
-      <li><a href="#division/women/round/3">Round 3</a></li>
-      <li><a href="#division/women/round/4">Round 4</a></li>
-      <li><a href="#division/women/round/5">Round 5</a></li>
-      <li><a href="#division/women/round/QF">Semi finals</a></li>
-      <li><a href="#division/women/round/SF">Quarter finals</a></li>
-      <li><a href="#division/women/round/F">Final</a></li>
-    </ul>
-  </nav>
-
-
   <div id="openscreen"></div>
+  
+  <div id="roundlist"></div>
+  
+  <div id="games"></div>
+  
+  <div id="standings"></div>
+  
   <div id="loading"></div>
-
 </body>
 </html>
-
-<!--
-De daadwerkelijke "haal json op code" staat in js/model/sync.js.
-Als je op een Backbone.js model  .fetch() aanroept komt dit nu vanzelf langs die sync.js file.
-Als je vervolgens model.set(o) doet wordt gewoon alles 1op1 gekopieerd uit de json response en wordt de "change" event gefired.
-Mijn idee was op een tournament een array te geven van round objecten die je dan vervolgens weer kan fetchen ofzo.
-De json code kun je dan in sync.js zetten waardoor de rest van de models wat schoner blijven.
-Ik heb alleen nog geen route vb kunnen toevoegen of template voorbeeld.
-Maar zaak is denk ik eerst even alle data ophalen.
-
-Gr, Les
--->

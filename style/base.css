@@ -11,3 +11,14 @@
   background: #000 url("img/loader.gif") no-repeat center center;
   border-radius: 8px;
 }
+
+
+
+#openscreen li.active a {
+  color: red;
+}
+
+#roundlist li.active a{
+  color: red;
+}
+

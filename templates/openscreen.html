@@ -1,0 +1,6 @@
+<h2>Tournament List</h2>
+<ul>
+  <% _.each(tournaments, function(t){ %>
+   <li class="tournament-<%=t.get("id") %>"><a href="#/tournament/<%= t.get("id") %>"><%= t.get("nameOverride") %></a></li> 
+  <% }); %>
+</ul>

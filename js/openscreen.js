@@ -2,12 +2,16 @@ define([
   'config',
   'controller/ui',
   'model/sync',
-  'model/tournament'
-], function(Config, UI, Sync, Tournament){
+  'model/tournament',
+  'view/openscreen_view',
+  'controller/tournament_controller'
+], function(Config, UI, Sync, Tournament, OpensScreenView, tournamentController){
   
   var app_router;
   var tournaments = [];
   var loadCount = 0;
+  
+  var view;
   
   var initialize = function(){
     Sync.initialize();
@@ -22,7 +26,6 @@ define([
 
 
     app_router = new AppRouter();
-    Backbone.history.start();
   };
   
   
@@ -35,18 +38,49 @@ define([
   
   var start = function() {
     UI.showLoading(false);
-    console.log("hooray");
+    view = new OpensScreenView({tournaments: tournaments});
+    view.render();
     
-    console.log(tournaments[0].get("name"));
+    Backbone.history.start();    
   };
   
-  
+
+  var openTournament = function(tid, rid) {
+    var tournament = null;
+    for(var i = 0; i < tournaments.length; i++) {
+      if(tournaments[i].get("id") == tid) {
+        tournament = tournaments[i];
+        break;
+      }
+    }
+    
+    if(tournament == null) {
+      alert("tournament not found");
+      return;
+    }
+    
+    view.showActive(tid);
+    
+    tournamentController.showTournament(tournament, rid);
+    
+  };
+
+
+
+
 
   var AppRouter = Backbone.Router.extend({
     routes: {
+      "tournament/:tid" : "tournamentAction",
+      'tournament/:tid/round/:rid' : "tournamentAction",
       '*actions': 'defaultAction'
     },
 
+    tournamentAction: function(tid, rid) {
+      console.log("route: " + tid + " - " + rid);
+      openTournament(tid, rid);
+    },
+    
     defaultAction: function(actions){
       
     }

@@ -1,0 +1,8 @@
+<h2>Standings</h2>
+<ul>
+  <% _.each(standings, function(rank){ %>
+   <li>
+    <%= rank.ranking %> - <%= rank.team.name %> <%= rank.wins %>:<%=rank.losses%>
+   </li> 
+  <% }); %>
+</ul>
