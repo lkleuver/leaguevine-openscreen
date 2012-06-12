@@ -1,6 +1,8 @@
-<h2>Round list</h2>
-<ul>
-  <% _.each(roundList.get("rounds"), function(t){ %>
-   <li class="round-<%=t.id%>"><a href="#tournament/<%= roundList.get("tournament_id") %>/round/<%= t.id %>">Round: <%= t.round_number %></a></li> 
-  <% }); %>
-</ul>
+<div class="selected">
+  <h1>Select round</h1>
+  <ul class="dropdown">
+    <% _.each(roundList.get("rounds"), function(t){ %>
+      <li class="round-<%=t.id%>"><a href="#tournament/<%= roundList.get("tournament_id") %>/round/<%= t.id %>">Round <%= t.round_number %></a></li> 
+    <% }); %>
+  </ul>
+</div>

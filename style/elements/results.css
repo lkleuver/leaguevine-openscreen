@@ -1,0 +1,9 @@
+
+  #results {
+    position: absolute;
+    z-index: 30;
+    left: 968px;
+    top: 144px;
+    width: 920px;
+    height: 552px;
+  }

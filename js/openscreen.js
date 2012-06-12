@@ -4,8 +4,9 @@ define([
   'model/sync',
   'model/tournament',
   'view/openscreen_view',
+  'view/clock_view',
   'controller/tournament_controller'
-], function(Config, UI, Sync, Tournament, OpensScreenView, tournamentController){
+], function(Config, UI, Sync, Tournament, OpensScreenView, clockView, tournamentController){
   
   var app_router;
   var tournaments = [];
@@ -40,6 +41,7 @@ define([
     UI.showLoading(false);
     view = new OpensScreenView({tournaments: tournaments});
     view.render();
+    clockView.render();
     
     Backbone.history.start();    
   };

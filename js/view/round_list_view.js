@@ -16,8 +16,20 @@ define([
     },
     
     showActive: function(rid) {
-      $("#roundlist li").removeClass("active");
-      $("#roundlist .round-"+rid).addClass("active");
+      var round = null;
+      var rounds = this.roundList.get("rounds");
+      
+      for(var i = 0; i < rounds.length; i++) {
+        if(rounds[i].id == rid) {
+          round = rounds[i];
+          break;
+        }
+      }
+      
+      if(round != null) {
+        $("#roundlist div.selected h1").html("Round " + round.round_number);
+      }
+      
     },
     
     

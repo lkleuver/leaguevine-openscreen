@@ -3,6 +3,7 @@ define([], function() {
     defaults: {
       'class' : 'tournament',
       'nameOverride'  : '',
+      'color' : "#545454"
     },
     
 

@@ -14,8 +14,18 @@ define([
     
     
     showActive: function(tid) {
-      $("#openscreen li").removeClass("active");
-      $("#openscreen .tournament-"+tid).addClass("active");
+      var tournament = null;
+      for(var i = 0; i < this.tournaments.length; i++) {
+        if(this.tournaments[i].get("id") == tid) {
+          tournament = this.tournaments[i];
+          break;
+        }
+      }
+      
+      if(tournament != null) {
+        $("#openscreen div.selected").css("background-color", tournament.get("color")).find('h1').html(tournament.get("nameOverride"));
+      }
+      
     },
     
     render: function(){

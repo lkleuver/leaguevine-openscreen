@@ -1,0 +1,83 @@
+
+  #standings {
+    position: absolute;
+    z-index: 20;
+    left: 32px;
+    top: 144px;
+    width: 920px;
+    height: 1120px;
+    
+    overflow: hidden;
+  }
+  
+  
+  #standings div.content {
+    height: 1000px;
+    overflow: hidden;
+  }
+  
+  #standings div.scrollarea {
+    overflow: hidden;
+  }
+  
+  
+  ul.teamlist {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+  }
+    
+  ul.teamlist li {
+    height: 80px;
+    background-color: #393939;
+    margin-bottom: 4px;
+  }  
+  
+  ul.teamlist:first-of-type li{
+    margin-right: 8px;
+  }
+  
+  ul.teamlist:last-of-type li{
+    margin-left: 8px;
+  }
+  
+  ul.teamlist div.rank {
+    float: left;
+    width: 60px;
+    height: 60px;
+    padding-top: 20px;
+    color: #444444;
+    background-color: #1D1D1D;
+    font-size: 38px;
+    text-align: center;
+  }
+  
+  ul.teamlist div.results {
+    float: left;
+    width: 60px;
+    height: 80px;
+    margin-left: 2px;
+    color: #444444;
+  }
+  
+  ul.teamlist div.results div {
+    background-color: #1D1D1D;
+    padding-top: 10px;
+    height: 29px;
+    text-align: center;
+    color: #992400;
+  }
+  
+  ul.teamlist div.results div.wins {
+      margin-bottom: 2px;
+      color: #6b8200;
+  }
+  
+  ul.teamlist a {
+    float: left;
+    height: 50px;
+    font-size: 18px;
+    padding: 30px 0 0 16px;
+  }
+  
+  

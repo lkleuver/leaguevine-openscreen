@@ -1,0 +1,9 @@
+
+  #games {
+    position: absolute;
+    z-index: 10;
+    left: 968px;
+    top: 712px;
+    width: 920px;
+    height: 552px;
+  }

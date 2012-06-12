@@ -1,6 +1,8 @@
-<h2>Tournament List</h2>
-<ul>
-  <% _.each(tournaments, function(t){ %>
-   <li class="tournament-<%=t.get("id") %>"><a href="#/tournament/<%= t.get("id") %>"><%= t.get("nameOverride") %></a></li> 
-  <% }); %>
-</ul>
+<div class="selected">
+  <h1>Select tournament</h1>
+  <ul class="dropdown">
+    <% _.each(tournaments, function(t){ %>
+     <li class="tournament-<%=t.get("id") %>"  style="background-color: <%= t.get('color') %>;"><a href="#/tournament/<%= t.get("id") %>"><%= t.get("nameOverride") %></a></li> 
+    <% }); %>
+  </ul>
+</div>

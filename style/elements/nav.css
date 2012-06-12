@@ -1,0 +1,46 @@
+
+
+  #openscreen {
+    position: absolute;
+    z-index: 100;
+    top: 32px;
+    left: 32px;
+    width: 640px;
+    height: 96px;
+  }
+    
+    
+  
+  
+  #roundlist {
+    position: absolute;
+    z-index: 101;
+    top: 32px;
+    left: 688px;
+    width: 640px;
+    height: 96px;
+  }
+  
+  #countdown {
+    position: absolute;
+    z-index: 99;
+    top: 32px;
+    left: 1344px;
+    width: 264px;
+    height: 96px;
+  }
+
+  #time {
+    position: absolute;
+    z-index: 99;
+    top: 32px;
+    left: 1624px;
+    width: 264px;
+    height: 96px;
+  }
+  
+  #countdown h1, #time h1 {
+      padding: 24px 16px 0 16px;
+      height: 72px;
+      text-align: center;
+  }
