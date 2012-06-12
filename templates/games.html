@@ -1,8 +1,22 @@
 <h2>Games</h2>
 <ul>
+	<header>
+	    <h1>Results</h1>
+	</header>
   <% _.each(games, function(game){ %>
    <li>
-    <%= game.game_site.name %>: <%= game.team_1.name %> <%= game.team_1_score %>  vs <%= game.team_2.name %> <%= game.team_2_score %>
+    <%= game.game_site.name %>
+    <a href="#"><%= game.team_1.name %></a>
+    <span class="score"><%= game.team_1_score %> - <%= game.team_2_score %></span>
+    <a href="#"><%= game.team_2.name %></a>
    </li> 
   <% }); %>
 </ul>
+
+<!--
+<li>
+    <a href="#">Ukraine</a>
+    <span class="score">12 - 9</span>
+    <a href="#">Germany National Team</a>
+</li>
+-->

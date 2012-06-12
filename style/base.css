@@ -1,4 +1,192 @@
+html {
+    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%,
+                                                transparent 50%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, .05) 75%,
+                                                transparent 75%, transparent);
+    background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#efefef));
+}
+body{
+    font: 100% helvetica;
+    letter-spacing: -0.0625em;
+    margin: 1em auto;
+}
+h1{
+    color:red;
+    text-shadow: 0.125em 0.125em 0.125em #999; /* offset-x offset-y blur spread color */
+    font-size: 1.5em; /* 24/16 = */
+    text-align:center;
+}
+ol,ul{
+    display: inline-block;
+}
 
+/* NAV */
+#nav{
+    width: 16%; /* 1260 = 250+550+460 = 20% + 45% + 35% */
+    display:inline-block;
+    text-align:center;
+}
+/* Navigation Openscreen Women/Mized/Open */
+
+#openscreen{
+    text-align:center;
+    margin-top: 10px;
+}
+#openscreen > h2{
+    color:grey;
+}
+#openscreen li{
+    display: inline-block;
+    margin: 0 0.125em;
+}
+#openscreen li a{
+    display: block;
+    text-decoration:none;
+    padding: 0.375em;
+    -webkit-box-shadow: 0.125em 0.125em 0.25em #888;
+}
+#openscreen li:nth-of-type(1) a{
+    color: pink;
+    background: red;
+}
+#openscreen li:nth-of-type(2) a{
+    color: pink;
+    background: purple;
+}
+#openscreen li:nth-of-type(3) a{
+    color: brown;
+    background: orange;
+}
+#openscreen li a:hover{
+  color: white;
+}
+
+/* Styling for Navigation roundlist */
+#roundlist{
+    text-align:center;
+    margin-top: 2em;
+}
+#roundlist ul{
+    display: block;
+    list-style:none;
+}
+#roundlist li a{
+    display:block;
+    text-decoration:none;
+    padding: 0.25em;
+    margin-top: 0.25em;
+    color: red;
+}
+#roundlist li a.disabled{
+    color: grey;
+}
+#roundlist li a.active{
+    color: black;
+    background: rgba(255,0,0,.5);
+}
+
+/* Styling for GAMES & SCHEDULE */
+#games {
+    width: 35%; /* 1260 = 250+550+460 = 20% + 45% + 35% */
+    display:inline-block;
+    vertical-align: top;
+}
+#games ul{
+    display: inline-block; 
+    width: 100%;
+    margin: 0 0.75em;
+    margin-bottom: 1.25em;
+    list-style-position: inside;
+}
+section.games ol.schedule, section.games ol.results{
+    list-style: none; /* Remove default numbering */
+}
+section.games ol.round1, section.games ol.round3{
+    display:none;
+}
+#games ul li{
+    margin-top: 0.4em;
+}
+#games li a {
+    display: inline-block;
+    width: 35%; /* 160 op 460 */
+    text-decoration: none;
+    color: #333;
+    padding: 0.25em;
+    background-color: rgba(255,0,0,.2);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,0,0,.2)), to(rgba(255,0,0,.3)));
+    -webkit-transition: all 0.3s ease-out;
+}
+#games li a:first-of-type {
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-box-shadow: 0px 2px 4px #888;
+    text-align: right;
+}
+#games li a:last-of-type {
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-box-shadow: 2px 2px 4px #888;
+}
+#games li .score {
+    display:inline-block;
+    width: 50px;
+    padding: 5px 6px;
+    text-align:center;
+    background-color: rgba(255,0,0,.5);
+    -webkit-box-shadow: 0px 2px 4px #888;
+}
+#games li a:hover {
+    color: red;
+    background-color:#eee;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#eee));
+}
+
+/* Styling for STANDING */
+#standings {
+    width: 45%; /* 1260 = 250+550+460 = 20% + 45% + 35% */
+    /* width: 550px; */
+    display:inline-block;
+    vertical-align: top;
+    margin-left: 0.625em;
+}
+#standings ol{
+    display: block;
+    width: 100%;
+    list-style-position:inside;
+    -webkit-box-shadow: inset 0.625em 0 0.625em -0.625em #333; /* offset-x offset-y blur spread color */
+    /*
+    -webkit-column-count: 2;
+    -webkit-column-gap: 0px;
+    -webkit-column-width: 0px;
+    -moz-column-count: 2;
+    -moz-column-gap: 0px;
+    -moz-column-width: 0px;
+    */
+}
+#standings ol li{
+    margin-top: 0.4em;
+    width: 80%; /* */
+    width: 280px; 
+}
+#standings ol li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 0.25em 0.75em;
+    background-color:#cecece;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-box-shadow: 2px 2px 4px #888,inset 10px 0 10px -10px #333;
+    -webkit-transition: all 0.3s ease-out;
+}
+#standings ol li a:hover {
+    color: red;
+    padding-left: 30px;
+    background-color:#eee;
+}
+
+
+/************/
 #loading {
   display: none;
   width: 60px;
@@ -14,11 +202,13 @@
 
 
 
+/*
 #openscreen li.active a {
   color: red;
 }
-
+*/
 #roundlist li.active a{
   color: red;
 }
+
 

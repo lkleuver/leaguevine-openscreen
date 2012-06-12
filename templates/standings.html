@@ -1,8 +1,22 @@
-<h2>Standings</h2>
-<ul>
+<header>
+    <h1>Standings - Women division</h1>
+</header>
+<ol>
   <% _.each(standings, function(rank){ %>
    <li>
-    <%= rank.ranking %> - <%= rank.team.name %> <%= rank.wins %>:<%=rank.losses%>
+   		<a href="#"><%= rank.ranking %> - <%= rank.team.name %> <%= rank.wins %>:<%=rank.losses%></a>
    </li> 
   <% }); %>
-</ul>
+</ol>
+
+<!--
+
+
+
+<section class="ranking">
+    <header>
+        <h1 id="rankingTitleText">Teams - Women division</h1>
+    </header>
+    <ol class="division rankingTeams">
+        <li id="1"><a href="#">aBriCos</a></li>
+-->
