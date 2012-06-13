@@ -16,12 +16,12 @@
 /* DROPDOWNS :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
   div.selected {
     cursor: pointer;
-    background: transparent url("img/arrow_down.png") no-repeat right 37px;
+    background: transparent url("img/arrow_down.png") no-repeat right 22px;
   }
 
   div.selected h1 {
-    padding: 24px 16px 0 16px;
-    height: 72px;
+    padding: 14px 16px 0 16px;
+    height: 50px;
   }
 
   ul.dropdown {

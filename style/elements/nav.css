@@ -5,8 +5,8 @@
     z-index: 100;
     top: 32px;
     left: 32px;
-    width: 640px;
-    height: 96px;
+    width: 400px;
+    height: 64px;
   }
     
     
@@ -16,31 +16,31 @@
     position: absolute;
     z-index: 101;
     top: 32px;
-    left: 688px;
-    width: 640px;
-    height: 96px;
+    left: 448px;
+    width: 400px;
+    height: 64px;
   }
   
   #countdown {
     position: absolute;
     z-index: 99;
     top: 32px;
-    left: 1344px;
-    width: 264px;
-    height: 96px;
+    left: 864px;
+    width: 208px;
+    height: 64px;
   }
 
   #time {
     position: absolute;
     z-index: 99;
     top: 32px;
-    left: 1624px;
-    width: 264px;
-    height: 96px;
+    left: 1088px;
+    width: 160px;
+    height: 64px;
   }
   
   #countdown h1, #time h1 {
-      padding: 24px 16px 0 16px;
-      height: 72px;
+      padding: 14px 16px 0 16px;
+      height: 50px;
       text-align: center;
   }

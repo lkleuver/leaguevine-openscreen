@@ -24,13 +24,20 @@ define([
     onAutoScroll: function() {
       var o = $("#standings div.content");
       if(o.scrollTop() == 0) {
-        o.animate({scrollTop : 1000},'slow');
+        o.animate({scrollTop : 460},'slow');
       }else{
         o.animate({scrollTop : 0},'slow');
       }
     },
     
     
+    shorten: function(s) {
+      if(s.length < 20) {
+        return s;
+      }
+      
+      return s.substr(0, 20) + "...";
+    },
     
     render: function(){
       clearInterval(this.intervalID);
@@ -49,6 +56,7 @@ define([
       var data = {
         left: left,
         right: right,
+        shorten: this.shorten,
         _: _ 
       };
 

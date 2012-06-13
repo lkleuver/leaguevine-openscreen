@@ -3,16 +3,17 @@
     position: absolute;
     z-index: 20;
     left: 32px;
-    top: 144px;
-    width: 920px;
-    height: 1120px;
+    top: 112px;
+    width: 600px;
+    height: 576px;
     
     overflow: hidden;
   }
   
   
   #standings div.content {
-    height: 1000px;
+    height: 460px;
+    padding-bottom: 16px;
     overflow: hidden;
   }
   
@@ -28,9 +29,10 @@
   }
     
   ul.teamlist li {
-    height: 80px;
+    height: 40px;
     background-color: #393939;
     margin-bottom: 4px;
+    overflow: hidden;
   }  
   
   ul.teamlist:first-of-type li{
@@ -43,27 +45,26 @@
   
   ul.teamlist div.rank {
     float: left;
-    width: 60px;
-    height: 60px;
-    padding-top: 20px;
-    color: #444444;
+    width: 40px;
+    height: 30px;
+    padding-top: 10px;
+    color: #eee;
     background-color: #1D1D1D;
-    font-size: 38px;
+    font-size: 22px;
     text-align: center;
   }
   
   ul.teamlist div.results {
     float: left;
-    width: 60px;
-    height: 80px;
+    width: 30px;
+    height: 40px;
     margin-left: 2px;
     color: #444444;
   }
   
   ul.teamlist div.results div {
     background-color: #1D1D1D;
-    padding-top: 10px;
-    height: 29px;
+    height: 19px;
     text-align: center;
     color: #992400;
   }
@@ -75,9 +76,9 @@
   
   ul.teamlist a {
     float: left;
-    height: 50px;
-    font-size: 18px;
-    padding: 30px 0 0 16px;
+    height: 30px;
+    font-size: 16px;
+    padding: 10px 0 0 16px;
   }
   
   

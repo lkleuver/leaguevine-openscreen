@@ -13,7 +13,7 @@
          		  <div class="wins"><%= rank.wins %></div>
          		  <div class="losses"><%=rank.losses%></div>
          		</div>
-         		<a href="#"> <%= rank.team.name %></a>
+         		<a href="#"> <%= shorten(rank.team.name) %></a>
          </li> 
         <% }); %>
       </ul>
@@ -26,7 +26,7 @@
         		  <div class="wins"><%= rank.wins %></div>
         		  <div class="losses"><%=rank.losses%></div>
         		</div>
-        		<a href="#"> <%= rank.team.name %></a>
+        		<a href="#"> <%= shorten(rank.team.name) %></a>
          </li> 
         <% }); %>
       </ul>
