@@ -63,6 +63,8 @@ define([
       var compiledTemplate = _.template( tpl, data );
       $("#standings").html(compiledTemplate);
       
+      $("#standings h2").css("color", $("#theme-color").html());
+      
       if($("#standings div.content").height() < $("#standings div.scrollarea").height()) {
         this.autoScroll();
       }

@@ -1,6 +1,6 @@
 body {
   font-family: helvetica, arial;
-  font-size: 18px;
+  font-size: 16px;
   color: #dedede;
 }
 
@@ -15,3 +15,10 @@ h1 {
   font-size: 38px;
   padding-bottom: 24px;
 }
+
+h2 {
+  font-weight: lighter;
+  font-size: 24px;
+  padding-bottom: 16px;
+}
+

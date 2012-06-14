@@ -7,3 +7,48 @@
     width: 600px;
     height: 280px;
   }
+  
+  
+
+  #results div.content {
+    height: 204px;
+    overflow: hidden;
+  }
+  
+  #results div.scrollarea {
+    overflow: hidden;
+  }
+  
+  #results ul.gamelist {
+    
+  }
+  
+  #results ul.gamelist li {
+    width: 568px;
+    height: 30px;
+    background-color: #393939;
+    margin-bottom: 4px;
+    overflow: hidden;
+  }
+  
+  
+  
+  #results ul.gamelist div.team {
+    height: 22px;
+    padding: 8px 0 0 8px;
+    width: 220px;
+    margin-right: 2px;
+    float: left;
+    overflow: hidden;
+  }
+  
+  #results ul.gamelist div.score {
+    width: 30px;
+    height: 22px;
+    padding: 8px 0 0 4px;
+    margin-right: 2px;
+    float: left;
+    background-color: #464646;
+  }
+
+  

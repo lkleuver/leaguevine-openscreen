@@ -1,16 +1,15 @@
 <section>
 	<header>
-	    <h2>Upcoming Games</h2>
+	    <h2>Results round <%= roundNumber %></h2>
 	</header>
   <div class="content">
     <div class="scrollarea">
     	<ul class="gamelist">
       <% _.each(games, function(game){ %>
        <li>
-         <div class="field"><%= game.game_site.name %></div>
-         <div class="time"><%= getTime(game.start_time) %></div>
          <div class="team"><%= game.team_1.name %></div>
-         <div class="vs">vs</div>
+         <div class="score"><%= game.team_1_score %></div>
+         <div class="score"><%= game.team_2_score %></div>
          <div class="team" style="margin-right: 0;"><%= game.team_2.name %></div>
        </li> 
       <% }); %>

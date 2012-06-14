@@ -1,19 +1,24 @@
 define([
   'config',
-  'text!templates/games.html'
+  'text!templates/results.html'
 ], function(Config, tpl){
 
   var view = Backbone.View.extend({
   
     games: [],
-    
+    roundNumber: 0,
     
     initialize: function() {
     },
     
-    showGames: function(g) {
+    showResults: function(g, rn) {
       this.games = g;
+      this.roundNumber = rn;
       this.render();
+    },
+    
+    showNoResults: function() {
+      $("#results").html("No results");
     },
     
     autoScroll: function() {
@@ -21,12 +26,12 @@ define([
     },
     
     onAutoScroll: function() {
-      var o = $("#games div.content");
+      var o = $("#results div.content");
       var pageSize = o.height();
       var ds = o.scrollTop() + pageSize;
-      console.log(o.scrollTop() + " - " + $("#games div.scrollarea").height() + " - " + pageSize);
+      console.log(o.scrollTop() + " - " + $("#results div.scrollarea").height() + " - " + pageSize);
 
-      if(o.scrollTop() + pageSize >= $("#games div.scrollarea").height()) {
+      if(o.scrollTop() + pageSize >= $("#results div.scrollarea").height()) {
         o.animate({scrollTop : 0},'slow');
       }else{
         o.animate({scrollTop : ds},'slow');       
@@ -37,20 +42,19 @@ define([
       return "12:00";
     },
     
-    
     render: function(){
       var data = {
         games: this.games,
-        _: _,
-        getTime: this.getTime
+        roundNumber: this.roundNumber,
+        _: _ 
       };
 
       var compiledTemplate = _.template( tpl, data );
-      $("#games").html(compiledTemplate);
+      $("#results").html(compiledTemplate);
       
-      $("#games h2").css("color", $("#theme-color").html());
+      $("#results h2").css("color", $("#theme-color").html());
       
-      if($("#games div.content").height() < $("#games div.scrollarea").height()) {
+      if($("#results div.content").height() < $("#results div.scrollarea").height()) {
         this.autoScroll();
       }
     }
