@@ -26,6 +26,14 @@ define([
       this.intervalID = setInterval(this.onAutoScroll, Config.pagingDuration);
     },
     
+    shorten: function(s) {
+      if(s.length < 20) {
+        return s;
+      }
+      
+      return s.substr(0, 20) + "...";
+    },
+    
     onAutoScroll: function() {
       var o = $("#results div.content");
       var pageSize = o.height();
@@ -49,6 +57,7 @@ define([
       var data = {
         games: this.games,
         roundNumber: this.roundNumber,
+        shorten: shorten,
         _: _ 
       };
 

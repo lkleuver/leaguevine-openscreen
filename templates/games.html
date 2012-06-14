@@ -9,9 +9,9 @@
        <li>
          <div class="field"><%= game.game_site.name %></div>
          <div class="time"><%= getTime(game.start_time) %></div>
-         <div class="team"><%= game.team_1.name %></div>
+         <div class="team"><%= shorten(game.team_1.name) %></div>
          <div class="vs">vs</div>
-         <div class="team" style="margin-right: 0;"><%= game.team_2.name %></div>
+         <div class="team" style="margin-right: 0;"><%= shorten(game.team_2.name) %></div>
        </li> 
       <% }); %>
       </ul>

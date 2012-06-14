@@ -42,7 +42,7 @@ define([
     view = new OpensScreenView({tournaments: tournaments});
     view.render();
     clockView.render();
-    
+    tournamentController.initialize(app_router);
     Backbone.history.start();    
   };
   

@@ -42,13 +42,21 @@ define([
       return hs + ":" + ms;
     },
     
+    shorten: function(s) {
+      if(s.length < 20) {
+        return s;
+      }
+      
+      return s.substr(0, 20) + "...";
+    },
     
     render: function(){
      clearInterval(this.intervalID);
       var data = {
         games: this.games,
         _: _,
-        getTime: this.getTime
+        getTime: this.getTime,
+        shorten: this.shorten
       };
 
       var compiledTemplate = _.template( tpl, data );

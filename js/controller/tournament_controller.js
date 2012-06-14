@@ -11,11 +11,17 @@ define([
   var tournament = null;
   var roundList = null;
   var round = null;
-  var pollRound = null;
+  var pollRoundList = null;
   var pollRoundIntervalID = -1;
   var prevRound = null;
   
   var targetRoundId = null;
+  
+  var router = null;
+  
+  var initialize = function(r) {
+    router = r;
+  };
   
   var showTournament = function(t, rid) {
     tournament = t;
@@ -62,9 +68,9 @@ define([
     
     //check for new available rounds
     clearInterval(pollRoundIntervalID);
-    pollRound = new RoundList({tournament_id : tournament.get("id")});
-    pollRound.on('change', onPollRoundChange);
-    //setInterval(checkForNewRounds, 60000);
+    pollRoundList = new RoundList({tournament_id : tournament.get("id")});
+    pollRoundList.on('change', onPollRoundChange);
+    pollRoundIntervalID = setInterval(checkForNewRounds, 60000);
     
     //previous round
     var pr = roundList.roundBefore(round.get("id"));
@@ -79,17 +85,20 @@ define([
   };
 
   var checkForNewRounds = function() {
-    pollRound.fetch();
+    pollRoundList.fetch();
   };
 
   var onPollRoundChange = function(e) {
-    if(pollRound.get("rounds").length > round.get("rounds").length) {
+    if(pollRoundList.get("rounds").length > roundList.get("rounds").length) {
       loadNextRound();
     }
   };
 
   var loadNextRound = function() {
     clearInterval(pollRoundIntervalID);
+    roundList = pollRoundList;
+    pollRoundList = null;
+    router.navigate("tournament/" + tournament.get("id") + "/round/" + roundList.getLastRoundID(), true);
   };
 
   var onPrevRoundChange = function(e) {
@@ -100,6 +109,7 @@ define([
   
   
   return {
+    initialize : initialize,
     showTournament: showTournament
   }
   

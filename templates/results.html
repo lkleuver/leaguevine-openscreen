@@ -7,10 +7,10 @@
     	<ul class="gamelist">
       <% _.each(games, function(game){ %>
        <li>
-         <div class="team"><%= game.team_1.name %></div>
+         <div class="team"><%= shorten(game.team_1.name) %></div>
          <div class="score"><%= game.team_1_score %></div>
          <div class="score"><%= game.team_2_score %></div>
-         <div class="team" style="margin-right: 0;"><%= game.team_2.name %></div>
+         <div class="team" style="margin-right: 0;"><%= shorten(game.team_2.name) %></div>
        </li> 
       <% }); %>
       </ul>

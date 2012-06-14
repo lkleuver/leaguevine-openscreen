@@ -9,6 +9,14 @@ define([], function() {
     initialize: function() {
     },
     
+    getLastRoundID: function() {
+      var r = this.get("rounds");
+      if(r.length > 0) {
+        return r[0].id;
+      }
+      return null;
+    },
+    
     roundBefore: function(rid) {
       var r = this.get("rounds");
       for(var i = 0; i < r.length; i++) {
