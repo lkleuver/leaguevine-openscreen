@@ -83,7 +83,13 @@ define([
   };
 
   var onPollRoundChange = function(e) {
-    //if(pollRound.get("rounds").length > round.get("rounds").length)
+    if(pollRound.get("rounds").length > round.get("rounds").length) {
+      loadNextRound();
+    }
+  };
+
+  var loadNextRound = function() {
+    clearInterval(pollRoundIntervalID);
   };
 
   var onPrevRoundChange = function(e) {

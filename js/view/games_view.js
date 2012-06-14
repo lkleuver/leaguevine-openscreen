@@ -34,7 +34,12 @@ define([
     },
     
     getTime: function(s) {
-      return "12:00";
+      var d = new Date(s);
+      var h = d.getHours();
+      var hs = h < 9 ? "0" + h : "" + h;
+      var m = d.getMinutes();
+      var ms = m < 9 ? "0" + m : "" + m;
+      return hs + ":" + ms;
     },
     
     
