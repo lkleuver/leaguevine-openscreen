@@ -19,7 +19,7 @@ define([
     },
     
     showNoResults: function() {
-      $("#results").html("No results");
+      $("#results").html("<em>No results yet</em>");
     },
     
     autoScroll: function() {

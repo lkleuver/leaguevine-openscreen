@@ -11,6 +11,8 @@ define([
   var tournament = null;
   var roundList = null;
   var round = null;
+  var pollRound = null;
+  var pollRoundIntervalID = -1;
   var prevRound = null;
   
   var targetRoundId = null;
@@ -58,6 +60,12 @@ define([
     gamesView.showGames(round.get("games"));
     standingsView.showStandings(round.get("standings"));
     
+    //check for new available rounds
+    clearInterval(pollRoundIntervalID);
+    pollRound = new RoundList({tournament_id : tournament.get("id")});
+    pollRound.on('change', onPollRoundChange);
+    //setInterval(checkForNewRounds, 60000);
+    
     //previous round
     var pr = roundList.roundBefore(round.get("id"));
     if(pr != null) {
@@ -68,6 +76,14 @@ define([
       resultsView.showNoResults();
       UI.showLoading(false);
     } 
+  };
+
+  var checkForNewRounds = function() {
+    pollRound.fetch();
+  };
+
+  var onPollRoundChange = function(e) {
+    //if(pollRound.get("rounds").length > round.get("rounds").length)
   };
 
   var onPrevRoundChange = function(e) {

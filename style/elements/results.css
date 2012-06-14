@@ -51,4 +51,12 @@
     background-color: #464646;
   }
 
+
+  #results em {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    padding-top: 130px;
+    color: #727272;
+  }
   
