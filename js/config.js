@@ -3,7 +3,7 @@ define([], function() {
 
     //location of the leaguevine API
     //api : "https://api.leaguevine.com/v1/",
-    api : "https://api.playwithlv.com/v1/",
+    api : "http://api.playwithlv.com/v1/",
     
     //list of tournament ID's you wish to include
     tournaments : [{nameOverride: "Women", id: 18093, color: "#d73300"}, 
