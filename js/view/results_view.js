@@ -6,6 +6,7 @@ define([
   var view = Backbone.View.extend({
   
     games: [],
+    intervalID: -1, 
     roundNumber: 0,
     
     initialize: function() {
@@ -43,6 +44,8 @@ define([
     },
     
     render: function(){
+      clearInterval(this.intervalID);
+      
       var data = {
         games: this.games,
         roundNumber: this.roundNumber,
