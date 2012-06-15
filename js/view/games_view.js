@@ -43,11 +43,11 @@ define([
     },
     
     shorten: function(s) {
-      if(s.length < 20) {
+      if(s.length < 18) {
         return s;
       }
       
-      return s.substr(0, 20) + "...";
+      return s.substr(0, 18) + "...";
     },
     
     render: function(){
