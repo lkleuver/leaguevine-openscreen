@@ -38,7 +38,6 @@ define([
       var o = $("#results div.content");
       var pageSize = o.height();
       var ds = o.scrollTop() + pageSize;
-      console.log(o.scrollTop() + " - " + $("#results div.scrollarea").height() + " - " + pageSize);
 
       if(o.scrollTop() + pageSize >= $("#results div.scrollarea").height()) {
         o.animate({scrollTop : 0},'slow');

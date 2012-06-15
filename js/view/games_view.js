@@ -24,7 +24,6 @@ define([
       var o = $("#games div.content");
       var pageSize = o.height();
       var ds = o.scrollTop() + pageSize;
-      console.log(o.scrollTop() + " - " + $("#games div.scrollarea").height() + " - " + pageSize);
 
       if(o.scrollTop() + pageSize >= $("#games div.scrollarea").height()) {
         o.animate({scrollTop : 0},'slow');

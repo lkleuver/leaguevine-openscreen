@@ -95,10 +95,10 @@ define([
   };
 
   var loadNextRound = function() {
+    console.log("LOADING NEXT ROUND");
     clearInterval(pollRoundIntervalID);
-    roundList = pollRoundList;
-    pollRoundList = null;
-    router.navigate("tournament/" + tournament.get("id") + "/round/" + roundList.getLastRoundID(), true);
+    roundList = null;
+    router.navigate("tournament/" + tournament.get("id") + "/round/" + pollRoundList.getLastRoundID(), true);
   };
 
   var onPrevRoundChange = function(e) {
