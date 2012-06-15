@@ -64,9 +64,11 @@
   
   ul.teamlist div.results div {
     background-color: #1D1D1D;
-    height: 19px;
+    padding-top: 3px;
+    height: 16px;
     text-align: center;
     color: #992400;
+    font-size: 12px;
   }
   
   ul.teamlist div.results div.wins {
@@ -74,11 +76,35 @@
       color: #6b8200;
   }
   
+  ul.teamlist div.swiss {
+    float: left;
+    width: 30px;
+    height: 40px;
+    margin-left: 2px;
+    color: #444444;
+  }
+  
+  ul.teamlist div.swiss div {
+    padding-top: 3px;
+    background-color: #1D1D1D;
+    height: 16px;
+    text-align: center;
+    color: #565656;
+    font-size: 12px;
+  }
+  
+  ul.teamlist div.swiss div.vp {
+      margin-bottom: 2px;
+  }
+
+  
   ul.teamlist a {
     float: left;
     height: 30px;
-    font-size: 16px;
-    padding: 10px 0 0 16px;
+    width: 146px;
+    font-size: 14px;
+    padding: 10px 0 0 10px;
+    overflow: hidden;
   }
   
   

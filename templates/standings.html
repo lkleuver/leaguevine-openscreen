@@ -13,6 +13,12 @@
          		  <div class="wins"><%= rank.wins %></div>
          		  <div class="losses"><%=rank.losses%></div>
          		</div>
+         		
+         		<div class="swiss">
+         		  <div class="vp"><%= rank.swiss_score %></div>
+         		  <div class="op"><%=rank.swiss_opponent_score%></div>
+         		</div>
+
          		<a href="#"> <%= shorten(rank.team.name) %></a>
          </li> 
         <% }); %>
@@ -26,6 +32,13 @@
         		  <div class="wins"><%= rank.wins %></div>
         		  <div class="losses"><%=rank.losses%></div>
         		</div>
+        		
+         		<div class="swiss">
+         		  <div class="vp"><%= rank.swiss_score %></div>
+         		  <div class="op"><%=rank.swiss_opponent_score%></div>
+         		</div>
+
+        		
         		<a href="#"> <%= shorten(rank.team.name) %></a>
          </li> 
         <% }); %>

@@ -32,11 +32,11 @@ define([
     
     
     shorten: function(s) {
-      if(s.length < 18) {
+      if(s.length < 16) {
         return s;
       }
       
-      return s.substr(0, 18) + "...";
+      return s.substr(0, 16) + "...";
     },
     
     render: function(){
