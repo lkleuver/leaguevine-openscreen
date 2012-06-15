@@ -57,7 +57,7 @@ define([
       var data = {
         games: this.games,
         roundNumber: this.roundNumber,
-        shorten: shorten,
+        shorten: this.shorten,
         _: _ 
       };
 
