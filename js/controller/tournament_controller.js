@@ -2,11 +2,13 @@ define([
   'controller/ui',
   'model/round_list',
   'model/swiss_round',
+  'model/bracket',
+  'view/bracket_view',
   'view/round_list_view',
   'view/games_view',
   'view/standings_view',
   'view/results_view',
-], function(UI, RoundList, SwissRound, roundListView, gamesView, standingsView, resultsView){
+], function(UI, RoundList, SwissRound, Bracket, bracketView, roundListView, gamesView, standingsView, resultsView){
   
   var tournament = null;
   var roundList = null;
@@ -14,9 +16,10 @@ define([
   var pollRoundList = null;
   var pollRoundIntervalID = -1;
   var prevRound = null;
-  
+  var bracket = null;
   var targetRoundId = null;
-  
+  var bracketIntervalID = -1;
+  var bracketFadeIntervalID = -1;
   var router = null;
   
   var initialize = function(r) {
@@ -26,18 +29,20 @@ define([
   var showTournament = function(t, rid) {
     tournament = t;
     $("#theme-color").html(tournament.get("color"));
-    
+      
     targetRoundId = rid;
-    
+      
     if(roundList == null || !rid || roundList.get("tournament_id") != tournament.get("id")) {
       roundList = new RoundList({tournament_id : t.get("id")});
       roundList.on('change', onRoundListChange);
-        
+      
       UI.showLoading(true);
       roundList.fetch();
     }else{
       showRound(rid);
     }
+      
+    showBracketting();
   };
   
   var onRoundListChange = function(e) {
@@ -106,6 +111,39 @@ define([
     resultsView.showResults(prevRound.get("games"), prevRound.get("round_number"));
   };
 
+  
+  var showBracketting = function() {
+    clearInterval(bracketFadeIntervalID);
+    $("#bracket").hide();
+    
+    bracket = new Bracket({tournament_id : tournament.get("id")});
+    bracket.on('change', onBracketLoad);
+    bracket.fetch();
+    bracketIntervalID = setInterval(onBracketPolling, 300000);
+  };
+  
+  var onBracketPolling = function() {
+    bracket.fetch();    
+  };
+  
+  var onBracketLoad = function(e) {
+    bracketView.showBracket(bracket.get("objects"));
+    $("#bracket").fadeIn();
+    
+    var toggle = true;
+    var inout = function() {
+      if(toggle) {
+        toggle = false;
+        $("#bracket").fadeOut();
+      }else{
+        toggle = true;
+        $("#bracket").fadeIn();
+      }
+    }    
+    bracketFadeIntervalID = setInterval(inout, 20000);
+
+  };
+  
   
   
   return {

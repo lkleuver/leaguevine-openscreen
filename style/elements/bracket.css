@@ -1,0 +1,82 @@
+#bracket {
+  position: absolute;
+  left: 32px;
+  top: 112px;
+  z-index: 70;
+  width: 1216px;
+  height: 576px;
+  background: #3C3C3C url("../img/backget_background.png") no-repeat left top;
+  
+  display: none;
+}
+
+#bracket div {
+  position: absolute;
+  z-index: 71;
+  left: 0;
+  top: 0;
+}
+
+
+#bracket .round1.left {  left: 16px; }
+#bracket .round1.right { left: 1017px;}
+
+#bracket .round1.spot1 {  top: 16px; }
+#bracket .round1.spot2 {  top: 65px; }
+#bracket .round1.spot3 {  top: 127px; }
+#bracket .round1.spot4 {  top: 176px; }
+
+#bracket .round1.game1, #bracket .round1.game3 {  top: 40px;}
+#bracket .round1.game2, #bracket .round1.game4 {  top: 151px;}
+
+
+#bracket .round2.left {  left: 215px; }
+#bracket .round2.right { left: 817px; }
+
+#bracket .round2.spot1 {  top: 40px; }
+#bracket .round2.spot2 {  top: 151px; }
+#bracket .round2.spot3 {  top: 349px; }
+#bracket .round2.spot4 {  top: 398px; }
+
+#bracket .round2.game1, #bracket .round2.game2 {  top: 93px;}
+#bracket .round2.game3, #bracket .round2.game4 {  top: 374px;}
+
+
+
+#bracket .round3.left {  left: 415px; }
+#bracket .round3.right { left: 617px; }
+
+#bracket .round3.spot1 {  top: 96px; }
+#bracket .round3.spot2 {  top: 236px; }
+#bracket .round3.spot3 {  top: 373px; }
+#bracket .round3.spot4 {  top: 506px; }
+
+#bracket .round3.info { left: 415px; width: 386px;}
+#bracket .round3.game1 {  top: 56px;}
+#bracket .round3.game2 {  top: 196px;}
+#bracket .round3.game3 {  top: 334px;}
+#bracket .round3.game4 {  top: 466px;}
+
+
+#bracket div.info {
+  width: 184px;
+  padding-top: 6px;
+  color: #6B6B6B;
+  font-size: 14px;
+  text-align: center;
+}
+
+#bracket div.spot {
+  padding: 3px 0 0 6px;
+}
+
+#bracket div.spot b {
+  float: left;
+  width: 140px;
+}
+
+#bracket div.spot em {
+  float: left;
+  width: 34px;
+  text-align: center;
+}

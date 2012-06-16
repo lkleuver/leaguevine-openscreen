@@ -16,6 +16,9 @@ define(['config'], function(Config) {
       case "swiss_round":
         loadSwissRound(model);
         break;
+      case "bracket":
+        loadBracket(model);
+        break;
     }
   };
   
@@ -61,7 +64,18 @@ define(['config'], function(Config) {
     });
   }
   
-  
+  var loadBracket = function(model) {
+    var onLoadBracket = function(o) {
+        model.set(o);
+    }
+    
+    $.ajax({
+      url: Config.api + "brackets/?tournament_id="+model.get("tournament_id") + "&callback=?",
+      success: onLoadBracket,
+      dataType: 'json'
+    });
+  }
+
 
   
   return {
