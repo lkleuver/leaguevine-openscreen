@@ -22,6 +22,8 @@ define([
   var bracketFadeIntervalID = -1;
   var router = null;
   
+  var bracketLoaded = false;
+  
   var initialize = function(r) {
     router = r;
   };
@@ -114,22 +116,15 @@ define([
   
   var showBracketting = function() {
     clearInterval(bracketFadeIntervalID);
+    bracketLoaded = false;
     $("#bracket").hide();
-    
+    bracket = null;
     bracket = new Bracket({tournament_id : tournament.get("id")});
     bracket.on('change', onBracketLoad);
     bracket.fetch();
     bracketIntervalID = setInterval(onBracketPolling, 300000);
-  };
-  
-  var onBracketPolling = function() {
-    bracket.fetch();    
-  };
-  
-  var onBracketLoad = function(e) {
-    bracketView.showBracket(bracket.get("objects"));
-    $("#bracket").fadeIn();
     
+  
     var toggle = true;
     var inout = function() {
       if(toggle) {
@@ -141,7 +136,18 @@ define([
       }
     }    
     bracketFadeIntervalID = setInterval(inout, 20000);
-
+  };
+  
+  var onBracketPolling = function() {
+    bracket.fetch();    
+  };
+  
+  var onBracketLoad = function(e) {
+    if(!bracketLoaded) {
+      $("#bracket").fadeIn();
+    }
+    bracketLoaded = true;
+    bracketView.showBracket(bracket.get("objects"));
   };
   
   
