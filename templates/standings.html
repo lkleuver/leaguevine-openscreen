@@ -8,7 +8,7 @@
       <ul class="teamlist">
         <% _.each(left, function(rank){ %>
          <li>
-         		<div class="rank"><%= rank.ranking %></div>
+         		<div class="rank"><%= (rank.ranking+8) %></div>
          		<div class="results">
          		  <div class="wins"><%= rank.wins %></div>
          		  <div class="losses"><%=rank.losses%></div>
@@ -27,7 +27,7 @@
       <ul class="teamlist">
         <% _.each(right, function(rank){ %>
          <li>
-        		<div class="rank"><%= rank.ranking %></div>
+        		<div class="rank"><%= (rank.ranking+8) %></div>
         		<div class="results">
         		  <div class="wins"><%= rank.wins %></div>
         		  <div class="losses"><%=rank.losses%></div>

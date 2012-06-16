@@ -77,9 +77,13 @@ define([
             game.team_2_score = "-";
           }
           
-          div1.find('b').html(game.team_1);
+          var name1 = game.team_1 != null ? game.team_1.short_name : "";
+          var name2 = game.team_2 != null ? game.team_2.short_name : "";
+
+          
+          div1.find('b').html(name1);
           div1.find('em').html(game.team_1_score);
-          div2.find('b').html(game.team_2)
+          div2.find('b').html(name2)
           div2.find('em').html(game.team_2_score);
         }
       }
@@ -101,9 +105,12 @@ define([
         game.team_2_score = "-";
       }
       
-      div1.find('b').html(game.team_1);
+      var name1 = game.team_1 != null ? game.team_1.short_name : "";
+      var name2 = game.team_2 != null ? game.team_2.short_name : "";
+      
+      div1.find('b').html(name1);
       div1.find('em').html(game.team_1_score);
-      div2.find('b').html(game.team_2)
+      div2.find('b').html(name2)
       div2.find('em').html(game.team_2_score);
     },
     
@@ -150,8 +157,11 @@ define([
       this.place(game, 3, "right", 4, game.team_2, game.team_2_score);
     },
     
-    place: function(game, rn, pos, sn, gn, name, score) {
+    place: function(game, rn, pos, sn, gn, team, score) {
       var div = $("#bracket div.round"+rn+".spot"+sn+"."+pos);
+      
+      var name = team != null ? team.short_name : "";
+      
       div.find('b').html(name);
       div.find('em').html(score);
     }

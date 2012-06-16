@@ -135,7 +135,7 @@ define([
         $("#bracket").fadeIn();
       }
     }    
-    bracketFadeIntervalID = setInterval(inout, 20000);
+    bracketFadeIntervalID = setInterval(inout, 30000);
   };
   
   var onBracketPolling = function() {
